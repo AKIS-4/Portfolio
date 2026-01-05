@@ -1,0 +1,91 @@
+Goal: Create a stunning, high-performance portfolio website for a GenAI Full Stack Engineer.
+
+Design Aesthetic:
+
+Theme: Modern, Futuristic, and Clean. Dark mode preferred (deep grays/blacks with neon purple or blue accents to signify AI/Tech).
+
+Typography: Monospace fonts for headers (like standard code editors) and clean sans-serif for body text.
+
+Vibe: Professional but cutting-edge. Use glassmorphism effects for project cards.
+
+Content & Sections:
+
+Hero Section
+Headline: "Hi, I'm Abhishek Harkar."
+
+Sub-headline: "GenAI Full Stack Engineer | DevOps Practitioner | System Architect"
+
+Tagline: "Building intelligent agents and scalable systems that bridge the gap between AI and production."
+
+Call to Actions: [View Projects] [Contact Me]
+
+About Me "I am a passionate Computer Science Engineer specializing in Generative AI and Full Stack Development. With a strong foundation in DevOps and cloud infrastructure, I don't just build models—I deploy scalable, production-ready AI solutions. My expertise spans building autonomous agents, RAG pipelines, and real-time streaming platforms. I am currently focused on solving complex problems using LangChain, LangGraph, and Azure OpenAI."
+
+Experience Timeline
+
+GenAI Full Stack Intern @ GenAIKit Software Solution Pvt Ltd (Oct 2025 – Present | Remote)
+
+Built and shipped Generative AI applications using FastAPI, LangChain, LangGraph, and Azure OpenAI.
+
+Designed RAG pipelines and ML microservices, reducing client manual workload by 40%.
+
+DevOps Intern @ Pearl Thoughts (July 2025 – Aug 2025 | Remote)
+
+Deployed headless backends (Strapi, Medusa) using Terraform and GitHub Actions.
+
+Managed infrastructure via AWS CodeDeploy and CloudWatch for reliable CI/CD.
+
+Projects Showcase (Grid Layout) Please display these 6 key projects with the following descriptions and tech stacks:
+Project 1: AI Code Assistant (OpenHands Edition)
+
+Description: A sophisticated autonomous coding agent built using OpenHands. It features a React frontend and integrates with code-server to perform real-time code generation, editing, and successful deployment of applications.
+
+Tech Stack: OpenHands, React, Code-Server, Docker.
+
+Project 2: Voice-to-Voice AI Interviewer
+
+Description: A real-time voice interaction platform that conducts technical interviews. It utilizes RAG over candidate resumes to generate context-aware questions and provides instant feedback.
+
+Tech Stack: FastAPI, Next.js, LiveKit, Azure OpenAI.
+
+Project 3: Live Video Streaming Engine
+
+Description: A scalable live streaming architecture capable of RTMP ingest and HLS delivery. Engineered for low latency using custom FFmpeg transcoding pipelines.
+
+Tech Stack: AWS EC2, Nginx RTMP, React, Node.js, FFmpeg.
+
+Project 4: OCR RAG for Complex Docs
+
+Description: An advanced Retrieval-Augmented Generation system designed for scanned PDFs and complex documents. Utilizes OCR to extract text from images/tables for precise information retrieval.
+
+Tech Stack: Python, OCR, LangChain, Vector DB.
+
+Project 5: Intelligent SQL Agents
+
+Description: A natural language to SQL interface that allows users to query complex databases using plain English. Built with autonomous agents that validate and optimize queries before execution.
+
+Tech Stack: Python, LangGraph, SQL, LLMs.
+
+Project 6: Healthcare AI Summarizer
+
+Description: A fine-tuned LLM (Mistral 7B) specialized in summarizing complex healthcare documents with high accuracy.
+
+Tech Stack: Mistral 7B, LoRA, FastAPI, Gradio.
+
+Technical Skills (Categorized)
+Languages: Python, C/C++, SQL, JavaScript.
+
+GenAI & ML: LangChain, LangGraph, AutoGen, RAG, Azure OpenAI, Ollama, Fine-tuning (LoRA).
+
+Web Frameworks: React.js, Node.js, FastAPI, Next.js.
+
+DevOps & Cloud: Docker, Kubernetes, AWS, Terraform, GitHub Actions.
+
+Contact & Footer
+Phone: +91 9373581139
+
+Email: abhishekharkar@gmail.com
+
+Socials: LinkedIn Profile | GitHub Profile
+
+Footer Text: "© 2026 Abhishek Harkar. Built with AI."
