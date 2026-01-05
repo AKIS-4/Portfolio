@@ -1,0 +1,330 @@
+import { motion } from "framer-motion";
+import { 
+  Github, 
+  Linkedin, 
+  Mail, 
+  Server, 
+  Code, 
+  Cpu, 
+  Terminal, 
+  ExternalLink,
+  ChevronDown
+} from "lucide-react";
+import heroBg from "@assets/generated_images/abstract_dark_neon_technology_background.png";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5 }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function Home() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground font-sans">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="font-mono text-xl font-bold tracking-tighter text-primary">
+            &lt;AH /&gt;
+          </div>
+          <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
+            <button onClick={() => scrollToSection('about')} className="hover:text-primary transition-colors">About</button>
+            <button onClick={() => scrollToSection('experience')} className="hover:text-primary transition-colors">Experience</button>
+            <button onClick={() => scrollToSection('projects')} className="hover:text-primary transition-colors">Projects</button>
+            <button onClick={() => scrollToSection('skills')} className="hover:text-primary transition-colors">Skills</button>
+          </div>
+          <Button variant="outline" size="sm" className="hidden md:flex gap-2" onClick={() => scrollToSection('contact')}>
+            <Mail className="w-4 h-4" /> Contact Me
+          </Button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: 0.4
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-0" />
+        
+        <div className="container px-6 z-10 relative">
+          <motion.div 
+            initial="initial"
+            animate="animate"
+            variants={staggerContainer}
+            className="max-w-4xl mx-auto text-center space-y-6"
+          >
+            <motion.div variants={fadeIn}>
+              <Badge variant="outline" className="px-4 py-1 text-primary border-primary/50 bg-primary/10 backdrop-blur-sm mb-4">
+                Available for Hire
+              </Badge>
+            </motion.div>
+            
+            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold tracking-tight">
+              Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Abhishek Harkar</span>.
+            </motion.h1>
+            
+            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
+              GenAI Full Stack Engineer | DevOps Practitioner | System Architect
+            </motion.p>
+            
+            <motion.p variants={fadeIn} className="text-lg text-muted-foreground/80 max-w-2xl mx-auto italic">
+              "Building intelligent agents and scalable systems that bridge the gap between AI and production."
+            </motion.p>
+            
+            <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+              <Button size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20" onClick={() => scrollToSection('projects')}>
+                View Projects
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 border-white/10 hover:bg-white/5" onClick={() => scrollToSection('contact')}>
+                Contact Me
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-muted-foreground"
+        >
+          <ChevronDown className="w-6 h-6" />
+        </motion.div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-24 bg-background relative overflow-hidden">
+        <div className="container px-6 mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center mb-16"
+          >
+            <h2 className="text-3xl font-bold font-mono mb-6 text-primary">&lt;About /&gt;</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              I am a passionate Computer Science Engineer specializing in <span className="text-white font-medium">Generative AI</span> and <span className="text-white font-medium">Full Stack Development</span>. 
+              With a strong foundation in DevOps and cloud infrastructure, I don't just build models—I deploy scalable, production-ready AI solutions. 
+              My expertise spans building autonomous agents, RAG pipelines, and real-time streaming platforms. 
+              I am currently focused on solving complex problems using LangChain, LangGraph, and Azure OpenAI.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-24 bg-secondary/20 relative">
+        <div className="container px-6 mx-auto">
+          <h2 className="text-3xl font-bold font-mono mb-12 text-center text-primary">&lt;Experience /&gt;</h2>
+          
+          <div className="max-w-3xl mx-auto space-y-8 relative">
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" />
+
+            {/* Job 1 */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative grid md:grid-cols-2 gap-8 items-center"
+            >
+              <div className="md:text-right">
+                <h3 className="text-xl font-bold">GenAI Full Stack Intern</h3>
+                <p className="text-primary font-mono text-sm mb-2">GenAIKit Software Solution Pvt Ltd</p>
+                <Badge variant="secondary" className="mb-4">Oct 2025 – Present | Remote</Badge>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background" />
+              <div className="md:pl-8">
+                <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 text-sm">
+                  <li>Built and shipped Generative AI applications using FastAPI, LangChain, LangGraph, and Azure OpenAI.</li>
+                  <li>Designed RAG pipelines and ML microservices, reducing client manual workload by 40%.</li>
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Job 2 */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative grid md:grid-cols-2 gap-8 items-center"
+            >
+              <div className="md:order-2">
+                <h3 className="text-xl font-bold">DevOps Intern</h3>
+                <p className="text-primary font-mono text-sm mb-2">Pearl Thoughts</p>
+                <Badge variant="secondary" className="mb-4">July 2025 – Aug 2025 | Remote</Badge>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary/50 ring-4 ring-background" />
+              <div className="md:order-1 md:text-right md:pr-8">
+                <ul className="list-disc list-outside ml-4 md:ml-0 md:list-none text-muted-foreground space-y-2 text-sm">
+                  <li>Deployed headless backends (Strapi, Medusa) using Terraform and GitHub Actions.</li>
+                  <li>Managed infrastructure via AWS CodeDeploy and CloudWatch for reliable CI/CD.</li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-24 bg-background">
+        <div className="container px-6 mx-auto">
+          <h2 className="text-3xl font-bold font-mono mb-16 text-center text-primary">&lt;Projects /&gt;</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "AI Code Assistant",
+                desc: "Autonomous coding agent built using OpenHands with React frontend and code-server integration.",
+                stack: ["OpenHands", "React", "Docker"],
+                icon: <Code className="w-6 h-6 text-blue-400" />
+              },
+              {
+                title: "Voice-to-Voice AI Interviewer",
+                desc: "Real-time voice interaction platform conducting technical interviews using RAG over resumes.",
+                stack: ["FastAPI", "Next.js", "Azure OpenAI"],
+                icon: <Cpu className="w-6 h-6 text-purple-400" />
+              },
+              {
+                title: "Live Video Streaming Engine",
+                desc: "Scalable streaming architecture with RTMP ingest, HLS delivery, and custom FFmpeg pipelines.",
+                stack: ["AWS EC2", "React", "FFmpeg"],
+                icon: <Server className="w-6 h-6 text-green-400" />
+              },
+              {
+                title: "OCR RAG for Complex Docs",
+                desc: "Advanced RAG system for extracting and retrieving information from scanned PDFs and tables.",
+                stack: ["Python", "LangChain", "Vector DB"],
+                icon: <Terminal className="w-6 h-6 text-yellow-400" />
+              },
+              {
+                title: "Intelligent SQL Agents",
+                desc: "Natural language to SQL interface validating and optimizing queries using autonomous agents.",
+                stack: ["LangGraph", "SQL", "LLMs"],
+                icon: <Code className="w-6 h-6 text-red-400" />
+              },
+              {
+                title: "Healthcare AI Summarizer",
+                desc: "Fine-tuned Mistral 7B model for accurate summarization of complex healthcare documents.",
+                stack: ["Mistral 7B", "LoRA", "FastAPI"],
+                icon: <Cpu className="w-6 h-6 text-teal-400" />
+              }
+            ].map((project, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Card className="h-full bg-secondary/10 border-white/5 hover:border-primary/50 transition-colors group cursor-pointer glass hover:bg-secondary/20">
+                  <CardHeader>
+                    <div className="flex justify-between items-start mb-2">
+                      <div className="p-2 rounded-lg bg-background/50 border border-white/5">
+                        {project.icon}
+                      </div>
+                      <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="mb-6 text-base">{project.desc}</CardDescription>
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.stack.map(tech => (
+                        <Badge key={tech} variant="outline" className="bg-background/30 border-white/10 text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-24 bg-secondary/10 border-t border-white/5">
+        <div className="container px-6 mx-auto">
+          <h2 className="text-3xl font-bold font-mono mb-16 text-center text-primary">&lt;Skills /&gt;</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { category: "Languages", items: ["Python", "C/C++", "SQL", "JavaScript"] },
+              { category: "GenAI & ML", items: ["LangChain", "LangGraph", "Azure OpenAI", "RAG", "Fine-tuning"] },
+              { category: "Web Frameworks", items: ["React.js", "Node.js", "FastAPI", "Next.js"] },
+              { category: "DevOps & Cloud", items: ["Docker", "Kubernetes", "AWS", "Terraform", "GitHub Actions"] }
+            ].map((skillGroup, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-6 rounded-2xl bg-background/40 border border-white/5 backdrop-blur-sm hover:border-primary/30 transition-colors"
+              >
+                <h3 className="text-lg font-bold mb-4 text-white/90 border-b border-white/5 pb-2">{skillGroup.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skillGroup.items.map(skill => (
+                    <span key={skill} className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-default">
+                      • {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer id="contact" className="py-12 bg-background border-t border-white/5">
+        <div className="container px-6 mx-auto text-center">
+          <h2 className="text-2xl font-bold font-mono mb-8 text-white">&lt;Connect /&gt;</h2>
+          
+          <div className="flex justify-center gap-6 mb-8">
+            <a href="https://github.com/AKIS-4" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary/30 hover:bg-primary hover:text-white transition-all">
+              <Github className="w-6 h-6" />
+            </a>
+            <a href="https://www.linkedin.com/in/abhishek-harkar-595647276" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary/30 hover:bg-primary hover:text-white transition-all">
+              <Linkedin className="w-6 h-6" />
+            </a>
+            <a href="mailto:abhishekharkar@gmail.com" className="p-3 rounded-full bg-secondary/30 hover:bg-primary hover:text-white transition-all">
+              <Mail className="w-6 h-6" />
+            </a>
+          </div>
+          
+          <div className="text-muted-foreground text-sm space-y-2">
+            <p>+91 9373581139 • abhishekharkar@gmail.com</p>
+            <p className="pt-4 text-xs opacity-50">© 2026 Abhishek Harkar. Built with AI.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
