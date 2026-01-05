@@ -198,40 +198,34 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "AI Code Assistant",
-                desc: "Autonomous coding agent built using OpenHands with React frontend and code-server integration.",
-                stack: ["OpenHands", "React", "Docker"],
-                icon: <Code className="w-6 h-6 text-blue-400" />
-              },
-              {
-                title: "Voice-to-Voice AI Interviewer",
-                desc: "Real-time voice interaction platform conducting technical interviews using RAG over resumes.",
-                stack: ["FastAPI", "Next.js", "Azure OpenAI"],
+                title: "Real-Time AI Interviewer",
+                desc: "Engineered a voice-to-voice interview assistant utilizing RAG to contextualize questions based on candidate resumes. The system handles real-time audio processing to conduct natural conversations, reducing manual recruiter screening time by nearly 40%.",
+                stack: ["FastAPI", "Next.js", "LiveKit", "Azure OpenAI", "RAG"],
                 icon: <Cpu className="w-6 h-6 text-purple-400" />
               },
               {
-                title: "Live Video Streaming Engine",
-                desc: "Scalable streaming architecture with RTMP ingest, HLS delivery, and custom FFmpeg pipelines.",
-                stack: ["AWS EC2", "React", "FFmpeg"],
+                title: "Live Video Streaming Platform",
+                desc: "Architected a high-performance video streaming platform capable of RTMP ingest, FFmpeg-based transcoding, and HLS segmentation. Deployed on AWS to handle multi-resolution delivery with low latency, ensuring scalable user interaction.",
+                stack: ["AWS (EC2, S3, Route53)", "Nginx RTMP", "FFmpeg", "React", "Node.js"],
                 icon: <Server className="w-6 h-6 text-green-400" />
               },
               {
-                title: "OCR RAG for Complex Docs",
-                desc: "Advanced RAG system for extracting and retrieving information from scanned PDFs and tables.",
-                stack: ["Python", "LangChain", "Vector DB"],
-                icon: <Terminal className="w-6 h-6 text-yellow-400" />
+                title: "Agentic Cloud IDE",
+                desc: "Developed a web-based Integrated Development Environment embedded with an autonomous coding agent. The system features a secure, containerized architecture using AWS ECS to provision isolated runtime environments for every user session.",
+                stack: ["React", "FastAPI", "Claude SDK", "LangGraph", "Azure Anthropic", "AWS ECS", "WebSockets"],
+                icon: <Terminal className="w-6 h-6 text-blue-400" />
               },
               {
-                title: "Intelligent SQL Agents",
-                desc: "Natural language to SQL interface validating and optimizing queries using autonomous agents.",
-                stack: ["LangGraph", "SQL", "LLMs"],
-                icon: <Code className="w-6 h-6 text-red-400" />
-              },
-              {
-                title: "Healthcare AI Summarizer",
-                desc: "Fine-tuned Mistral 7B model for accurate summarization of complex healthcare documents.",
-                stack: ["Mistral 7B", "LoRA", "FastAPI"],
+                title: "Clinical LLM Fine-Tuning",
+                desc: "Built a domain-specific summarization model for healthcare by fine-tuning Mistral 7B using LoRA. Curated a dataset of 10k+ medical documents to optimize training workflows, resulting in a 25% increase in summarization accuracy.",
+                stack: ["Mistral 7B", "LoRA/PEFT", "FastAPI", "Gradio", "Python"],
                 icon: <Cpu className="w-6 h-6 text-teal-400" />
+              },
+              {
+                title: "OCR-Enhanced RAG Pipeline",
+                desc: "Designed an advanced Retrieval-Augmented Generation system specifically for complex, unstructured data. Integrates OCR to accurately extract and analyze information from scanned PDFs, images, and embedded tables for precise query retrieval.",
+                stack: ["LangChain", "PyTesseract (OCR)", "React", "FastAPI", "Python"],
+                icon: <Code className="w-6 h-6 text-yellow-400" />
               }
             ].map((project, i) => (
               <motion.div
@@ -252,10 +246,10 @@ export default function Home() {
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="mb-6 text-base">{project.desc}</CardDescription>
+                    <CardDescription className="mb-6 text-base text-muted-foreground/90">{project.desc}</CardDescription>
                     <div className="flex flex-wrap gap-2 mt-auto">
                       {project.stack.map(tech => (
-                        <Badge key={tech} variant="outline" className="bg-background/30 border-white/10 text-xs">
+                        <Badge key={tech} variant="outline" className="bg-primary/5 border-primary/20 text-primary/90 text-[10px] px-2 py-0 uppercase tracking-wider font-mono">
                           {tech}
                         </Badge>
                       ))}

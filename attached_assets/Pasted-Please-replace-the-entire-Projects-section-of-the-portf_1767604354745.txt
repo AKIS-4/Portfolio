@@ -1,0 +1,28 @@
+Please replace the entire "Projects" section of the portfolio with the specific list below. 
+
+For the design:
+1. Display these as clean, modern cards or a grid layout.
+2. Do NOT include any "Live Demo" or "Source Code" links/buttons. Just display the Title, Description, and Tech Stack tags.
+3. Ensure the Tech Stack tags are visually distinct (e.g., small badges or pills).
+
+Here is the updated content:
+
+1. Real-Time AI Interviewer
+Description: Engineered a voice-to-voice interview assistant utilizing RAG to contextualize questions based on candidate resumes. The system handles real-time audio processing to conduct natural conversations, reducing manual recruiter screening time by nearly 40%.
+Tech Stack: FastAPI, Next.js, LiveKit, Azure OpenAI, RAG
+
+2. Live Video Streaming Platform
+Description: Architected a high-performance video streaming platform capable of RTMP ingest, FFmpeg-based transcoding, and HLS segmentation. Deployed on AWS to handle multi-resolution delivery with low latency, ensuring scalable user interaction.
+Tech Stack: AWS (EC2, S3, Route53), Nginx RTMP, FFmpeg, React, Node.js
+
+3. Agentic Cloud IDE
+Description: Developed a web-based Integrated Development Environment embedded with an autonomous coding agent. The system features a secure, containerized architecture using AWS ECS to provision isolated runtime environments for every user session.
+Tech Stack: React, FastAPI, Claude SDK, LangGraph, Azure Anthropic, AWS ECS, WebSockets
+
+4. Clinical LLM Fine-Tuning
+Description: Built a domain-specific summarization model for healthcare by fine-tuning Mistral 7B using LoRA. Curated a dataset of 10k+ medical documents to optimize training workflows, resulting in a 25% increase in summarization accuracy.
+Tech Stack: Mistral 7B, LoRA/PEFT, FastAPI, Gradio, Python
+
+5. OCR-Enhanced RAG Pipeline
+Description: Designed an advanced Retrieval-Augmented Generation system specifically for complex, unstructured data. Integrates OCR to accurately extract and analyze information from scanned PDFs, images, and embedded tables for precise query retrieval.
+Tech Stack: LangChain, PyTesseract (OCR), React, FastAPI, Python
