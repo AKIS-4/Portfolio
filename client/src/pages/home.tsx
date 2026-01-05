@@ -195,7 +195,7 @@ export default function Home() {
         <div className="container px-6 mx-auto">
           <h2 className="text-3xl font-bold font-mono mb-16 text-center text-primary">&lt;Projects /&gt;</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {[
               {
                 title: "Real-Time AI Interviewer",
@@ -234,7 +234,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex"
+                className="flex w-full md:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-1.5rem)]"
               >
                 <Card className="flex flex-col w-full bg-secondary/10 border-white/5 hover:border-primary/50 transition-all duration-300 group cursor-default glass hover:bg-secondary/20 hover:translate-y-[-4px]">
                   <CardHeader>
@@ -246,7 +246,7 @@ export default function Home() {
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex flex-col flex-grow">
-                    <CardDescription className="mb-6 text-base text-muted-foreground/90 line-clamp-4">
+                    <CardDescription className="mb-6 text-base text-muted-foreground/90">
                       {project.desc}
                     </CardDescription>
                     <div className="flex flex-wrap gap-2 mt-auto pt-4">
