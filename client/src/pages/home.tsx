@@ -42,7 +42,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="font-mono text-xl font-bold tracking-tighter text-primary">
+          <div className="font-mono text-xl font-bold tracking-tighter text-primary cursor-pointer hover:opacity-80 transition-opacity" onClick={() => scrollToSection('home')}>
             &lt;AH /&gt;
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
@@ -58,7 +58,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -234,20 +234,22 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
+                className="flex"
               >
-                <Card className="h-full bg-secondary/10 border-white/5 hover:border-primary/50 transition-colors group cursor-pointer glass hover:bg-secondary/20">
+                <Card className="flex flex-col w-full bg-secondary/10 border-white/5 hover:border-primary/50 transition-all duration-300 group cursor-default glass hover:bg-secondary/20 hover:translate-y-[-4px]">
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
-                      <div className="p-2 rounded-lg bg-background/50 border border-white/5">
+                      <div className="p-2 rounded-lg bg-background/50 border border-white/5 group-hover:border-primary/30 transition-colors">
                         {project.icon}
                       </div>
-                      <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
                     <CardTitle className="text-xl group-hover:text-primary transition-colors">{project.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <CardDescription className="mb-6 text-base text-muted-foreground/90">{project.desc}</CardDescription>
-                    <div className="flex flex-wrap gap-2 mt-auto">
+                  <CardContent className="flex flex-col flex-grow">
+                    <CardDescription className="mb-6 text-base text-muted-foreground/90 line-clamp-4">
+                      {project.desc}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-2 mt-auto pt-4">
                       {project.stack.map(tech => (
                         <Badge key={tech} variant="outline" className="bg-primary/5 border-primary/20 text-primary/90 text-[10px] px-2 py-0 uppercase tracking-wider font-mono">
                           {tech}
