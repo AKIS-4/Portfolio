@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { 
-  Github, 
-  Linkedin, 
-  Mail, 
-  Server, 
-  Code, 
-  Cpu, 
-  Terminal, 
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Server,
+  Code,
+  Cpu,
+  Terminal,
   ExternalLink,
   ChevronDown
 } from "lucide-react";
@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${heroBg})`,
@@ -69,9 +69,9 @@ export default function Home() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-0" />
-        
+
         <div className="container px-6 z-10 relative">
-          <motion.div 
+          <motion.div
             initial="initial"
             animate="animate"
             variants={staggerContainer}
@@ -82,19 +82,19 @@ export default function Home() {
                 Available for Hire
               </Badge>
             </motion.div>
-            
+
             <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl font-bold tracking-tight">
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Abhishek Harkar</span>.
             </motion.h1>
-            
+
             <motion.p variants={fadeIn} className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
               GenAI Full Stack Engineer | DevOps Practitioner | System Architect
             </motion.p>
-            
+
             <motion.p variants={fadeIn} className="text-lg text-muted-foreground/80 max-w-2xl mx-auto italic">
               "Building intelligent agents and scalable systems that bridge the gap between AI and production."
             </motion.p>
-            
+
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20" onClick={() => scrollToSection('projects')}>
                 View Projects
@@ -106,7 +106,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
@@ -119,7 +119,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24 bg-background relative overflow-hidden">
         <div className="container px-6 mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -128,9 +128,9 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold font-mono mb-6 text-primary">&lt;About /&gt;</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I am a passionate Computer Science Engineer specializing in <span className="text-white font-medium">Generative AI</span> and <span className="text-white font-medium">Full Stack Development</span>. 
-              With a strong foundation in DevOps and cloud infrastructure, I don't just build models—I deploy scalable, production-ready AI solutions. 
-              My expertise spans building autonomous agents, RAG pipelines, and real-time streaming platforms. 
+              I am a passionate Computer Science Engineer specializing in <span className="text-white font-medium">Generative AI</span> and <span className="text-white font-medium">Full Stack Development</span>.
+              With a strong foundation in DevOps and cloud infrastructure, I don't just build models—I deploy scalable, production-ready AI solutions.
+              My expertise spans building autonomous agents, RAG pipelines, and real-time streaming platforms.
               I am currently focused on solving complex problems using LangChain, LangGraph, and Azure OpenAI.
             </p>
           </motion.div>
@@ -141,12 +141,12 @@ export default function Home() {
       <section id="experience" className="py-24 bg-secondary/20 relative">
         <div className="container px-6 mx-auto">
           <h2 className="text-3xl font-bold font-mono mb-12 text-center text-primary">&lt;Experience /&gt;</h2>
-          
+
           <div className="max-w-3xl mx-auto space-y-8 relative">
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 hidden md:block" />
 
             {/* Job 1 */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -160,14 +160,14 @@ export default function Home() {
               <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background" />
               <div className="md:pl-8">
                 <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 text-sm">
-                  <li>Built and shipped Generative AI applications using FastAPI, LangChain, LangGraph, and Azure OpenAI.</li>
-                  <li>Designed RAG pipelines and ML microservices, reducing client manual workload by 40%.</li>
+                  <li>Architected autonomous multi-agent systems using AutoGen and LangGraph, benchmarking various LLMs for optimal performance.</li>
+                  <li>Implemented real-time multimodal pipelines utilizing LiveKit with tts, stt and OCR technologies to enhance agent interaction capabilities.</li>
                 </ul>
               </div>
             </motion.div>
 
-            {/* Job 2 */}
-            <motion.div 
+            {/* Job 2 - Pearl Thoughts */}
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -186,6 +186,27 @@ export default function Home() {
                 </ul>
               </div>
             </motion.div>
+
+            {/* Job 3 - GenAIKit Jan 2025 */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative grid md:grid-cols-2 gap-8 items-center"
+            >
+              <div className="md:text-right">
+                <h3 className="text-xl font-bold">GenAI Full Stack Intern</h3>
+                <p className="text-primary font-mono text-sm mb-2">GenAIKit Software Solution Pvt Ltd</p>
+                <Badge variant="secondary" className="mb-4">Jan 2025 – June 2025 | Remote</Badge>
+              </div>
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary/50 ring-4 ring-background" />
+              <div className="md:pl-8">
+                <ul className="list-disc list-outside ml-4 text-muted-foreground space-y-2 text-sm">
+                  <li>Built and shipped Generative AI applications using FastAPI, LangChain, LangGraph, and Azure OpenAI.</li>
+                  <li>Designed RAG pipelines and ML microservices, reducing client manual workload by 40%.</li>
+                </ul>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -194,13 +215,13 @@ export default function Home() {
       <section id="projects" className="py-24 bg-background">
         <div className="container px-6 mx-auto">
           <h2 className="text-3xl font-bold font-mono mb-16 text-center text-primary">&lt;Projects /&gt;</h2>
-          
+
           <div className="flex flex-wrap justify-center gap-6">
             {[
               {
-                title: "Real-Time AI Interviewer",
-                desc: "Engineered a voice-to-voice interview assistant utilizing RAG to contextualize questions based on candidate resumes. The system handles real-time audio processing to conduct natural conversations, reducing manual recruiter screening time by nearly 40%.",
-                stack: ["FastAPI", "Next.js", "LiveKit", "Azure OpenAI", "RAG"],
+                title: "Voice-to-Voice Chatbot",
+                desc: "Engineered a low-latency voice AI assistant enabling natural, real-time conversations. Integrated Deepgram for fast STT, Cartesia for expressive TTS, and LiveKit for seamless streaming. Powered by LangChain and Azure OpenAI for reasoning, with capability to fetch live data via Serp and Weather APIs.",
+                stack: ["LiveKit", "Deepgram", "Cartesia", "LangChain", "Azure OpenAI", "Serp API"],
                 icon: <Cpu className="w-6 h-6 text-purple-400" />
               },
               {
@@ -268,7 +289,7 @@ export default function Home() {
       <section id="skills" className="py-24 bg-secondary/10 border-t border-white/5">
         <div className="container px-6 mx-auto">
           <h2 className="text-3xl font-bold font-mono mb-16 text-center text-primary">&lt;Skills /&gt;</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { category: "Languages", items: ["Python", "C/C++", "SQL", "JavaScript"] },
@@ -302,7 +323,7 @@ export default function Home() {
       <footer id="contact" className="py-12 bg-background border-t border-white/5">
         <div className="container px-6 mx-auto text-center">
           <h2 className="text-2xl font-bold font-mono mb-8 text-white">&lt;Connect /&gt;</h2>
-          
+
           <div className="flex justify-center gap-6 mb-8">
             <a href="https://github.com/AKIS-4" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-secondary/30 hover:bg-primary hover:text-white transition-all">
               <Github className="w-6 h-6" />
@@ -314,7 +335,7 @@ export default function Home() {
               <Mail className="w-6 h-6" />
             </a>
           </div>
-          
+
           <div className="text-muted-foreground text-sm space-y-2">
             <p>+91 9373581139 • abhishekharkar@gmail.com</p>
             <p className="pt-4 text-xs opacity-50">© 2026 Abhishek Harkar. Built with AI.</p>
